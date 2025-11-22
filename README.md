@@ -1,5 +1,5 @@
 # Lab2Video
-This is a repository for a lab assignment  of DLVSP
+This is a repository for a lab assignment  of DLVSP focused on video object detection.  
 
 
 First, create a new environment to work in
@@ -84,4 +84,23 @@ Install pillow
 pip install 'pillow<7.0.0
 unset INSTALL_DIR
 ```
+
+Once the installation is complete, let's try some examples for object detection. Download from the repository the files R_101.pth and MEGA_R_101.pth and paste them in ~/mega.pytorch/ directory. Download image_folder.zip and video_folder.zip and unzip them. Copy the resulting folders in ~/mega.pytorch/ directory. Create a folder for visualizing the results, i.e., ~/mega.pytorch/visualization/
+
+Finally, process the image samples for object detection using base approach:
+```python
+python demo/demo.py base configs/vid_R_101_C4_1x.yaml R_101.pth --suffix ".JPEG" --visualize-path image_folder --output-folder visualization --output-video
+```
+You can compare the results with MEGA approach:
+```python
+python demo/demo.py mega configs/MEGA/vid_R_101_C1_MEGA_1x.yaml MEGA_R_101.pth --suffix ".JPEG" --visualize-path image_folder --output-folder visualization --output-video
+```
+
+Some video samples are available too (change VIDEO.avi for the video sample you want to process):
+```python
+python demo/demo.py base configs/vid_R_101_C4_1x.yaml R_101.pth --video --visualize-path video_folder/VIDEO.avi --output-folder visualization --output-video
+python demo/demo.py mega configs/MEGA/vid_R_101_C1_MEGA_1x.yaml MEGA_R_101.pth --video --visualize-path video_folder/VIDEO.avi --output-folder visualization --output-video
+```
+
+Resulting videos are shown in ~/mega.pytorch/visualization directory.
 
