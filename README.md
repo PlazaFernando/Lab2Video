@@ -85,7 +85,7 @@ pip install 'pillow<7.0.0
 unset INSTALL_DIR
 ```
 
-Once the installation is complete, let's try some examples for object detection. Download from the repository the files R_101.pth and MEGA_R_101.pth and paste them in ~/mega.pytorch/ directory. Download image_folder.zip and video_folder.zip and unzip them. Copy the resulting folders in ~/mega.pytorch/ directory. Create a folder for visualizing the results, i.e., ~/mega.pytorch/visualization/
+Once the installation is complete, let's try some examples for object detection. Download the files [R_101.pth](https://drive.google.com/file/d/1W17f9GC60rHU47lUeOEfU--Ra-LTw3Tq/view) and [MEGA_R_101.pth](https://drive.google.com/file/d/1ZnAdFafF1vW9Lnpw-RPF1AD_csw61lBY/view) and paste them in ~/mega.pytorch/ directory. Download image_folder.zip and video_folder.zip from the repository and unzip them. Copy the resulting folders in ~/mega.pytorch/ directory. Create a folder for visualizing the results, i.e., ~/mega.pytorch/visualization/
 
 Finally, process the image samples for object detection using base approach:
 ```python
