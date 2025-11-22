@@ -20,7 +20,7 @@ pip install ninja yacs cython matplotlib tqdm opencv-python scipy
 
 Install pytorch 1.2.0 and torchvision
 ```python
-conda install pytorch=1.2.0 tochvision=0.4.0 cudatoolkit=10.0 -c pytorch
+conda install pytorch=1.2.0 torchvision=0.4.0 cudatoolkit=10.0 -c pytorch
 ```
 
 Install pycocotools
@@ -46,7 +46,7 @@ git clone https://github.com/NVIDIA/apex.git
 ```
 Now, download from the repository the following archives: setup.py , scheduler.py , wrapper.py , graph.py , layer.norm.py , config.py , backend.py and test_dist_adam.py and paste them in their respective folders:
 ```python
-~/apez/setup.py
+~/apex/setup.py
 ~/apex/apex/contrib/torchsched/inductor/scheduler.py
 ~/apex/apex/contrib/torchsched/inductor/wrapper.py
 ~/apex/apex/contrib/torchsched/inductor/graph.py
@@ -64,7 +64,7 @@ python setup.py build_ext install
 Install mega.pytorch
 ```python
 cd $INSTALL_DIR
-gir clone https://github.com/Scalsol/mega.pytorch.git
+git clone https://github.com/Scalsol/mega.pytorch.git
 ```
 Now, download from the repository the following archives: nms.py , roi_align.py , roi_pool.py and predictor.py and paste them in their respective folders:
 ```python
@@ -81,7 +81,7 @@ python setup.py build develop
 
 Install pillow
 ```python
-pip install 'pillow<7.0.0
+pip install 'pillow<7.0.0'
 unset INSTALL_DIR
 ```
 
@@ -93,14 +93,16 @@ python demo/demo.py base configs/vid_R_101_C4_1x.yaml R_101.pth --suffix ".JPEG"
 ```
 You can compare the results with MEGA approach:
 ```python
-python demo/demo.py mega configs/MEGA/vid_R_101_C1_MEGA_1x.yaml MEGA_R_101.pth --suffix ".JPEG" --visualize-path image_folder --output-folder visualization --output-video
+python demo/demo.py mega configs/MEGA/vid_R_101_C4_MEGA_1x.yaml MEGA_R_101.pth --suffix ".JPEG" --visualize-path image_folder --output-folder visualization --output-video
 ```
 
-Some video samples are available too (change VIDEO.avi for the video sample you want to process):
+Some video samples are available in video_folder, to process them execute the following code (change VIDEO.avi for the video file name you want to process, i.e., tiger.avi):
 ```python
 python demo/demo.py base configs/vid_R_101_C4_1x.yaml R_101.pth --video --visualize-path video_folder/VIDEO.avi --output-folder visualization --output-video
-python demo/demo.py mega configs/MEGA/vid_R_101_C1_MEGA_1x.yaml MEGA_R_101.pth --video --visualize-path video_folder/VIDEO.avi --output-folder visualization --output-video
+```
+```python
+python demo/demo.py mega configs/MEGA/vid_R_101_C4_MEGA_1x.yaml MEGA_R_101.pth --video --visualize-path video_folder/VIDEO.avi --output-folder visualization --output-video
 ```
 
-Resulting videos are shown in ~/mega.pytorch/visualization directory.
+Resulting videos are shown in ~/mega.pytorch/visualization directory. Make sure to rename the output file if you want to conserve it, otherwise it will be overwritten when processing other videos.
 
